@@ -65,12 +65,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btRen = (Button) findViewById(R.id.btRen);
+        btRen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reiniciarPartida();
+            }
+        });
 
     }
 
     public void mostarPlacar(int pontuacaoA) {
         TextView PlacarA = (TextView) findViewById(R.id.PlacarA);
         PlacarA.setText(String.valueOf(pontuacaoA));
+    }
+
+    public void reiniciarPartida() {
+        pontuacaoA = 0;
+        pontuacaoB = 0;
+        mostarPlacar(pontuacaoA);
+        mostarPlacarB(pontuacaoB);
     }
 
     public void tresPontosA() {
@@ -107,4 +121,6 @@ public class MainActivity extends AppCompatActivity {
         pontuacaoB = pontuacaoB + 1;
         mostarPlacarB(pontuacaoB);
     }
+
+
 }
